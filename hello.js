@@ -1,3 +1,6 @@
+import moment from 'moment'
+
 export function words(name) {
-    return `Hello, ${name}!`
+    const now = moment()
+    return `Hello, ${name}! (${now})`
 }

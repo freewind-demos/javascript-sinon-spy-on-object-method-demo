@@ -1,7 +1,7 @@
-Mocha "sinon" Mock Demo
-=======================
+Mocha "sinon" Mock "moment" time Demo
+=====================================
 
-使用"sinon"将已经存在的function替换为mock。
+在Sinon中，如何mock时间。
 
 ```
 npm install
