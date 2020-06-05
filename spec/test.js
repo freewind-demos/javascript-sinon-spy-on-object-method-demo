@@ -1,13 +1,15 @@
 import {expect} from 'chai'
 import sinon from 'sinon'
-import * as hello from '../hello'
+import User from '../User'
 
 describe('sinon', function () {
-    it('should mock the given function', function () {
-        const clock = sinon.useFakeTimers(new Date(2000, 11, 22, 33, 44, 55).getTime())
-        expect(hello.words('sinon')).eq('Hello, sinon! (977535895000)')
+  it('should mock object method', function () {
+    const user = new User('world');
 
-        clock.tick(1000)
-        expect(hello.words('sinon')).eq('Hello, sinon! (977535896000)')
-    })
+    const upperNameSpy = sinon.spy(user, 'upperName');
+
+    user.hello();
+
+    expect(upperNameSpy.calledOnceWith('world')).equal(true);
+  })
 })
